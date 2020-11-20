@@ -1,7 +1,7 @@
 class Rope {
     constructor(body1, body2, offsetX, offsetY ){
         this.offesetX = offsetX
-        history.offsetY = offsetY
+        this.offsetY = offsetY
 
         var options={
             bodyA: body1,
@@ -10,18 +10,21 @@ class Rope {
         }
     this.rope = Constraint.create(options);
     World.add(world,this.rope)
-    console.log(rope);
+    console.log(this.rope);
     }
 
     display(){
         var pointA = this.rope.bodyA.position;
         var pointB = this.rope.bodyB.position;
-        strokeWeight(2);
+
+        strokeWeight(4);
+        stroke("black");
+
         var Anchor1X = pointA.x
         var Anchor1Y = pointA.y
 
-        var Anchor2X = pointBx + this.offsetX
-        var Anchor2Y = pointBy + this.offsetY
+        var Anchor2X = pointB.x + this.offsetX
+        var Anchor2Y = pointB.y + this.offsetY
         line(Anchor1X, Anchor1Y, Anchor2X, Anchor2Y);
     }
 }

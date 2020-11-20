@@ -6,7 +6,7 @@ class Bob{
         }
     
         this.body = Bodies.circle(x,y,radius,options);
-        this.image = loadImage("sprites/paper.png");
+       
         this.r = radius;
         
         World.add(world,this.body);
@@ -21,7 +21,7 @@ class Bob{
     
         
         fill("pink");
-        ellipse(0,0,this.w,this.h);
+        ellipse(0,0,this.r, this.r);
        pop()
     }
     
